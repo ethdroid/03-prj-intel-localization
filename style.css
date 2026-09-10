@@ -1,1 +1,206 @@
-/* Add your CSS here */
+:root {
+  --intel-blue: #0068b5;
+  --intel-deep: #00285a;
+  --intel-sky: #00c7fd;
+  --ink: #1c1c1c;
+  --slate: #5a6570;
+  --paper: #f4f6f8;
+  --card: #ffffff;
+  --rail: #d6dde4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ===== Hero ===== */
+
+.hero {
+  background: linear-gradient(160deg, var(--intel-deep) 0%, var(--intel-blue) 70%);
+  color: #fff;
+  padding: 5rem 1.5rem 4rem;
+  text-align: center;
+}
+
+.hero__logo {
+  width: 110px;
+  margin: 0 auto 2rem;
+}
+
+.hero__title {
+  font-size: clamp(2.1rem, 6vw, 3.75rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  max-width: 16ch;
+  margin: 0 auto;
+}
+
+.hero__subtitle {
+  margin: 1.25rem auto 0;
+  max-width: 52ch;
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ===== Timeline ===== */
+
+.timeline-section {
+  padding: 4rem 0 5rem;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 1.75rem;
+  overflow-x: auto;
+  padding: 1rem 1.5rem 2.5rem;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 1.5rem;
+  scrollbar-color: var(--intel-blue) var(--rail);
+}
+
+.timeline::-webkit-scrollbar {
+  height: 6px;
+}
+
+.timeline::-webkit-scrollbar-track {
+  background: var(--rail);
+  border-radius: 999px;
+}
+
+.timeline::-webkit-scrollbar-thumb {
+  background: var(--intel-blue);
+  border-radius: 999px;
+}
+
+/* ===== Milestone cards ===== */
+
+.milestone {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+  background: var(--card);
+  border-radius: 14px;
+  border-top: 4px solid var(--intel-blue);
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 40, 90, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.milestone__media {
+  background: linear-gradient(135deg, var(--intel-deep), var(--intel-sky));
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 1.25rem;
+}
+
+.milestone__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.milestone__year {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--intel-blue);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.milestone__title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0.6rem;
+}
+
+.milestone__details {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.4s ease;
+}
+
+.milestone__details p {
+  font-size: 0.9rem;
+  color: var(--slate);
+  border-top: 1px solid var(--rail);
+  padding-top: 0.9rem;
+}
+
+.milestone:hover,
+.milestone:focus-within {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 32px rgba(0, 104, 181, 0.22);
+}
+
+.milestone:hover .milestone__details,
+.milestone:focus-within .milestone__details {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 0.9rem;
+}
+
+/* ===== Footer ===== */
+
+.site-footer {
+  background: var(--intel-deep);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  font-size: 0.85rem;
+}
+
+/* ===== Mobile: stack vertically ===== */
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 3.5rem 1.25rem 3rem;
+  }
+
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+    overflow-x: visible;
+    scroll-snap-type: none;
+    gap: 1.25rem;
+  }
+
+  .milestone {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .milestone__details {
+    max-height: 340px;
+    opacity: 1;
+    margin-top: 0.9rem;
+  }
+
+  .milestone:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
