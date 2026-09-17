@@ -1,142 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap. The id lets JavaScript swap this for the RTL build. -->
+  <link id="bootstrap-css" rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Yours loads last so it overrides Bootstrap -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link" data-i18n="skip">Skip to main content</a>
+
+  <nav class="topbar" aria-label="Site options">
+    <div class="topbar__inner">
+      <span class="topbar__brand" data-i18n="brand">Intel Sustainability</span>
+      <button id="lang-toggle" type="button" class="btn btn-sm btn-light">العربية</button>
+    </div>
+  </nav>
+
   <header class="hero">
-    <img class="hero__logo" src="img/intel-header-logo.svg" alt="Intel Logo" />
-    <h1 class="hero__title">Sustainability Through the Ages</h1>
-    <p class="hero__subtitle">
+    <img class="hero__logo" src="img/intel-header-logo.svg" alt="Intel corporate logo" />
+    <h1 class="hero__title" data-i18n="heroTitle">Sustainability Through the Ages</h1>
+    <p class="hero__subtitle" data-i18n="heroSubtitle">
       Explore Intel's journey through time, discovering how our commitment
       to innovation has shaped a more sustainable future for technology
       and our planet.
     </p>
   </header>
 
-  <main>
+  <main id="main-content">
+
     <section class="timeline-section">
+      <h2 class="section-heading" data-i18n="timelineHeading">Our Sustainability Milestones</h2>
+
       <div class="timeline">
 
-        <article class="milestone">
+        <article class="milestone" tabindex="0">
           <div class="milestone__media">
             <img src="img/1.jpg" alt="Intel's founding era" />
           </div>
           <p class="milestone__year">1968</p>
-          <h3 class="milestone__title">Intel Founded</h3>
+          <h3 class="milestone__title" data-i18n="m1Title">Intel Founded</h3>
           <div class="milestone__details">
-            <p>Robert Noyce and Gordon Moore rename the newly formed company
+            <p data-i18n="m1Text">Robert Noyce and Gordon Moore rename the newly formed company
             NM Electronics to Intel Corporation, laying the foundation for
             decades of technological innovation.</p>
           </div>
         </article>
 
-        <article class="milestone">
+        <article class="milestone" tabindex="0">
           <div class="milestone__media">
             <img src="img/2.jpg" alt="The Intel 4004 microprocessor" />
           </div>
           <p class="milestone__year">1971</p>
-          <h3 class="milestone__title">First Microprocessor</h3>
+          <h3 class="milestone__title" data-i18n="m2Title">First Microprocessor</h3>
           <div class="milestone__details">
-            <p>Intel debuts the 4004, the world's first commercial microprocessor,
+            <p data-i18n="m2Text">Intel debuts the 4004, the world's first commercial microprocessor,
             igniting the microprocessor revolution and propelling the future
             of computing devices.</p>
           </div>
         </article>
 
-        <article class="milestone">
+        <article class="milestone" tabindex="0">
           <div class="milestone__media">
             <img src="img/3.jpg" alt="The 8086 processor" />
           </div>
           <p class="milestone__year">1978</p>
-          <h3 class="milestone__title">8086 Processor</h3>
+          <h3 class="milestone__title" data-i18n="m3Title">8086 Processor</h3>
           <div class="milestone__details">
-            <p>Launch of the 8086 processor, establishing the x86 architecture
+            <p data-i18n="m3Text">Launch of the 8086 processor, establishing the x86 architecture
             that drives countless PCs and servers in the modern era.</p>
           </div>
         </article>
 
-        <article class="milestone">
+        <article class="milestone" tabindex="0">
           <div class="milestone__media">
             <img src="img/4.jpg" alt="The 386 processor" />
           </div>
           <p class="milestone__year">1985</p>
-          <h3 class="milestone__title">386 Processor</h3>
+          <h3 class="milestone__title" data-i18n="m4Title">386 Processor</h3>
           <div class="milestone__details">
-            <p>Intel introduces the 386 processor with 32-bit architecture,
+            <p data-i18n="m4Text">Intel introduces the 386 processor with 32-bit architecture,
             ushering in a new era of performance and multitasking for
             personal computers.</p>
           </div>
         </article>
 
-        <article class="milestone">
+        <article class="milestone" tabindex="0">
           <div class="milestone__media">
             <img src="img/1.jpg" alt="Industrial emissions at a manufacturing site" />
           </div>
           <p class="milestone__year">2006</p>
-          <h3 class="milestone__title">Peak GHG Emissions</h3>
+          <h3 class="milestone__title" data-i18n="m5Title">Peak GHG Emissions</h3>
           <div class="milestone__details">
-            <p>This year marks Intel's highest annual greenhouse gas emissions
+            <p data-i18n="m5Text">This year marks Intel's highest annual greenhouse gas emissions
             for operations. Over subsequent years, Intel invests heavily in
             chemical abatement, renewable energy, and energy-efficient
             manufacturing to reverse this trend.</p>
           </div>
         </article>
 
-        <article class="milestone">
+        <article class="milestone" tabindex="0">
           <div class="milestone__media">
             <img src="img/2.jpg" alt="Engineers reviewing sustainability goals" />
           </div>
           <p class="milestone__year">2020</p>
-          <h3 class="milestone__title">RISE Strategy</h3>
+          <h3 class="milestone__title" data-i18n="m6Title">RISE Strategy</h3>
           <div class="milestone__details">
-            <p>Intel launches its RISE (Responsible, Inclusive, Sustainable,
+            <p data-i18n="m6Text">Intel launches its RISE (Responsible, Inclusive, Sustainable,
             Enabling) strategy and 2030 goals, aiming to drive industry-wide
             progress on climate action, water stewardship, and waste reduction.</p>
           </div>
         </article>
 
-        <article class="milestone">
+        <article class="milestone" tabindex="0">
           <div class="milestone__media">
             <img src="img/3.jpg" alt="A low-carbon semiconductor facility" />
           </div>
           <p class="milestone__year">2022</p>
-          <h3 class="milestone__title">Net-Zero By 2040</h3>
+          <h3 class="milestone__title" data-i18n="m7Title">Net-Zero By 2040</h3>
           <div class="milestone__details">
-            <p>Intel announces its commitment to achieve net-zero greenhouse
+            <p data-i18n="m7Text">Intel announces its commitment to achieve net-zero greenhouse
             gas emissions (Scope 1 and 2) across its global operations
             by 2040, building on years of environmental initiatives.</p>
           </div>
         </article>
 
-        <article class="milestone">
+        <article class="milestone" tabindex="0">
           <div class="milestone__media">
             <img src="img/4.jpg" alt="Wind and solar power generation" />
           </div>
           <p class="milestone__year">2023</p>
-          <h3 class="milestone__title">Renewable Electricity</h3>
+          <h3 class="milestone__title" data-i18n="m8Title">Renewable Electricity</h3>
           <div class="milestone__details">
-            <p>The company achieves 99% renewable electricity usage worldwide,
+            <p data-i18n="m8Text">The company achieves 99% renewable electricity usage worldwide,
             helping to drastically lower carbon emissions and driving progress
             toward Intel's long-term sustainability goals.</p>
           </div>
         </article>
 
-        <article class="milestone">
+        <article class="milestone" tabindex="0">
           <div class="milestone__media">
             <img src="img/1.jpg" alt="Industry leaders meeting at a summit" />
           </div>
           <p class="milestone__year">2024</p>
-          <h3 class="milestone__title">Sustainability Summit</h3>
+          <h3 class="milestone__title" data-i18n="m9Title">Sustainability Summit</h3>
           <div class="milestone__details">
-            <p>Intel hosts its first Sustainability Summit, uniting suppliers,
+            <p data-i18n="m9Text">Intel hosts its first Sustainability Summit, uniting suppliers,
             government officials, and industry leaders to collaborate on
             next-generation sustainable semiconductor manufacturing.</p>
           </div>
@@ -144,11 +165,143 @@
 
       </div>
     </section>
+
+    <!-- THREE COLUMN SECTION (Bootstrap grid) -->
+    <section class="focus-section">
+      <div class="container">
+        <h2 class="section-heading" data-i18n="focusHeading">Our Focus Areas</h2>
+
+        <div class="row g-4">
+
+          <div class="col-md-4">
+            <div class="focus-card">
+              <h3 class="focus-card__title">
+                <i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>
+                <span data-i18n="card1Title">Renewable Energy</span>
+              </h3>
+              <p class="focus-card__text" data-i18n="card1Text">
+                Intel sources renewable electricity across its global operations
+                and invests in on-site solar and wind generation.
+              </p>
+              <button type="button" class="btn btn-intel"
+                      data-bs-toggle="modal" data-bs-target="#infoModal"
+                      data-key="card1" data-i18n="learnMore">Learn More</button>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="focus-card">
+              <h3 class="focus-card__title">
+                <i class="bi bi-droplet-fill" aria-hidden="true"></i>
+                <span data-i18n="card2Title">Water Stewardship</span>
+              </h3>
+              <p class="focus-card__text" data-i18n="card2Text">
+                Watershed restoration projects return more fresh water to local
+                communities than Intel factories consume.
+              </p>
+              <button type="button" class="btn btn-intel"
+                      data-bs-toggle="modal" data-bs-target="#infoModal"
+                      data-key="card2" data-i18n="learnMore">Learn More</button>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="focus-card">
+              <h3 class="focus-card__title">
+                <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+                <span data-i18n="card3Title">Circular Economy</span>
+              </h3>
+              <p class="focus-card__text" data-i18n="card3Text">
+                Manufacturing waste is recovered, reused, and recycled to keep
+                material out of landfills.
+              </p>
+              <button type="button" class="btn btn-intel"
+                      data-bs-toggle="modal" data-bs-target="#infoModal"
+                      data-key="card3" data-i18n="learnMore">Learn More</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBSCRIPTION FORM -->
+    <section class="subscribe-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <h2 class="section-heading section-heading--start" data-i18n="formTitle">
+              Subscribe to our sustainability newsletter
+            </h2>
+            <p class="subscribe-section__lead" data-i18n="formText">
+              Get progress updates delivered to your inbox.
+            </p>
+
+            <form id="subscribe-form" novalidate>
+
+              <div class="mb-3">
+                <label for="fullName" class="form-label" data-i18n="labelName">Full name</label>
+                <input type="text" class="form-control" id="fullName" name="fullName" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label" data-i18n="labelEmail">Email address</label>
+                <input type="email" class="form-control" id="email" name="email"
+                       aria-describedby="emailHelp" required>
+                <div id="emailHelp" class="form-text" data-i18n="emailHelp">
+                  We will never share your email address.
+                </div>
+              </div>
+
+              <fieldset class="mb-4">
+                <legend class="form-label" data-i18n="labelFrequency">
+                  How often would you like updates?
+                </legend>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="frequency"
+                         id="freqWeekly" value="weekly" checked>
+                  <label class="form-check-label" for="freqWeekly" data-i18n="optWeekly">Weekly</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="frequency"
+                         id="freqMonthly" value="monthly">
+                  <label class="form-check-label" for="freqMonthly" data-i18n="optMonthly">Monthly</label>
+                </div>
+              </fieldset>
+
+              <button type="submit" class="btn btn-intel" data-i18n="btnSubscribe">Subscribe</button>
+
+              <p id="form-status" class="form-status d-none" role="status"
+                 data-i18n="formSuccess">Thanks for subscribing.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <!-- MODAL -->
+  <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="infoModalTitle">Details</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="infoModalBody">Content loads here.</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="close">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer">
-    <p>Scroll to view timeline | Hover over cards to learn more!</p>
+    <p data-i18n="footerLine">Scroll or press Tab to explore the timeline and reveal each milestone.</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

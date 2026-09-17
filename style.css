@@ -71,7 +71,7 @@ img {
   overflow-x: auto;
   padding: 1rem 1.5rem 2.5rem;
   scroll-snap-type: x mandatory;
-  scroll-padding-left: 1.5rem;
+  scroll-padding-inline-start: 1.5rem;
   scrollbar-color: var(--intel-blue) var(--rail);
 }
 
@@ -127,7 +127,7 @@ img {
 .milestone__title {
   font-size: 1.15rem;
   font-weight: 600;
-  margin: 0.5rem 0 0.6rem;
+  margin-block: 0.5rem 0.6rem;
 }
 
 .milestone__details {
@@ -165,6 +165,166 @@ img {
   text-align: center;
   padding: 2rem 1.5rem;
   font-size: 0.85rem;
+}
+
+/* ===== Skip link and keyboard focus ===== */
+
+.skip-link {
+  position: absolute;
+  inset-inline-start: -999px;
+  top: 0;
+  background: #fff;
+  color: var(--intel-deep);
+  padding: 0.75rem 1rem;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  inset-inline-start: 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+.milestone:focus-visible {
+  outline: 3px solid var(--intel-sky);
+  outline-offset: 3px;
+}
+
+/* ===== Top bar with language switch ===== */
+
+.topbar {
+  background: var(--intel-deep);
+  padding: 0.6rem 1.5rem;
+}
+
+.topbar__inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.topbar__brand {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ===== Shared section headings ===== */
+
+.section-heading {
+  text-align: center;
+  font-size: clamp(1.6rem, 4vw, 2.25rem);
+  font-weight: 600;
+  color: var(--intel-deep);
+  margin-bottom: 2.5rem;
+}
+
+.section-heading--start {
+  text-align: start;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-section .section-heading {
+  margin-bottom: 1rem;
+}
+
+/* ===== Three column focus section ===== */
+
+.focus-section {
+  padding: 4rem 1.5rem 5rem;
+  background: #fff;
+}
+
+.focus-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border-radius: 14px;
+  border-top: 4px solid var(--intel-blue);
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 40, 90, 0.08);
+}
+
+.focus-card__title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--intel-deep);
+  margin-bottom: 0.75rem;
+}
+
+.focus-card__title .bi {
+  color: var(--intel-blue);
+  margin-inline-end: 0.5rem;
+}
+
+.focus-card__text {
+  color: var(--slate);
+  font-size: 0.95rem;
+  flex-grow: 1;
+  margin-bottom: 1.25rem;
+}
+
+/* ===== Buttons ===== */
+
+.btn-intel {
+  background: var(--intel-blue);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.55rem 1.5rem;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.btn-intel:hover,
+.btn-intel:focus {
+  background: var(--intel-deep);
+  color: #fff;
+}
+
+/* ===== Subscription form ===== */
+
+.subscribe-section {
+  background: var(--paper);
+  padding: 4rem 1.5rem 5rem;
+}
+
+.subscribe-section__lead {
+  color: var(--slate);
+  margin-bottom: 2rem;
+}
+
+.subscribe-section .form-label {
+  font-weight: 500;
+  color: var(--intel-deep);
+}
+
+.subscribe-section legend.form-label {
+  font-size: 1rem;
+  float: none;
+  width: auto;
+}
+
+.form-status {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #146c43;
+}
+
+/* ===== Arabic typography and RTL corrections ===== */
+
+[dir="rtl"] body {
+  font-family: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+}
+
+[dir="rtl"] .hero__title,
+[dir="rtl"] .milestone__year {
+  letter-spacing: normal;
 }
 
 /* ===== Mobile: stack vertically ===== */
